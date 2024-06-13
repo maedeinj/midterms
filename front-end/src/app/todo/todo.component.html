@@ -1,0 +1,23 @@
+<div class="flex justify-left items-center h-screen bg-gradient-to-br from-blue-700 to-yellow-800 px-4">
+  <div class="bg-white p-8 shadow-xl mr-10">
+    <div class="mb-8">
+      <label for="todoItem" class="block text-lg font-bold text-black mb-4">Add a task for the current user</label>
+      <div class="flex">
+        <input type="text" name="todoItem" id="todoItem" class="w-full border border-green py-2 px-3 bg-transparent text-black focus:outline-none focus:border-blue-400" placeholder="Enter task" [formControl]="itemName"/>
+        <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4  transition duration-300 ease-in-out transform hover:scale-105" (click)="pushItemToList()">Add</button>
+      </div>
+    </div>
+  </div>
+  <div class="bg-white p-8 shadow-xl ml-2">
+    <table class="text-black justify-right">
+      <tr>
+        <th class="px-4 py-2">Item Name</th>
+        <th class="px-4 py-2">Added By</th>
+      </tr>
+      <tr *ngFor="let item of todoList">
+        <td class="border px-4 py-2">{{ item.itemName }}</td>
+        <td class="border px-4 py-2">ADMIN</td>
+      </tr>
+    </table>
+  </div>
+</div>
